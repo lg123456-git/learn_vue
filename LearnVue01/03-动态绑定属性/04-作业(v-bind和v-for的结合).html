@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.active{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-on:click="getIndex(index)" v-bind:class="{active: index == mark}" v-for="(m,index)  in movies">{{index}}-{{m}}</li>
+			</ul>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					movies: ["火影忍者","霸王别姬","楚门的世界","海尔兄弟"],
+					mark: 0
+				},
+				methods: {
+					getIndex(index){
+						this.mark = index;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

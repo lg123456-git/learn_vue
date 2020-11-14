@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="message" />
+			<h2>{{message}}</h2>
+			<!-- v-model的实现原理 -->
+			<br />
+			<input type="text" :value="message2" v-on:input="changeValue" />
+			{{message2}}
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					message: "你好啊",
+					message2: "ddd"
+				},
+				methods:{
+					changeValue(event){
+						this.message2 = event.target.value;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

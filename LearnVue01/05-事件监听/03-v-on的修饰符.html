@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 1、如果我们需要点击按钮1的时候不触发点击div事件
+			stop修饰符的使用
+			 -->
+			<div @click="divClick">
+				aaaaaaaa
+				<button @click.stop="btnClick">按钮1</button>
+			</div>
+			
+			
+			<!-- 2、.prevent的使用 ,表单手动提交-->
+			<form action="baidu">
+				<input  type="submit" @click.prevent="submitClick()"/>
+			</form>
+			
+			<!-- 3、监听某个键盘的点击事件 -->
+			<input type="text" @keyup.enter="keyUp"/>
+			
+			<!-- 4、.once的使用,只用第一次有效 -->
+			<button @click.once="btn2Click">按钮2</button>
+		</div>
+	
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					
+				},
+				methods:{
+					divClick(){
+						console.log("divClick");
+					},
+					btnClick(){
+						console.log("btnClick");
+					},
+					submitClick(){
+						console.log("submitClick");
+					},
+					keyUp(){
+						console.log("keyUp");
+					},
+					btn2Click(){
+						console.log("btn2Click");
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

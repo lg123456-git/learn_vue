@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			//app.letters.splice(2,0,'F'),向中间添加F，加key后效率会更高
+			<h2 v-for="item in letters" :key="item">{{item}}</h2>
+		</div>
+		<script src="../js/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: "#app",
+				data: {
+					letters:['A','B','C','D','E']
+				}
+			})
+		</script>
+	</body>
+</html>

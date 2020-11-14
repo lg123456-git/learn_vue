@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			//1、注意一：一旦给construction修饰的标识符，不能修改，常量
+			const name = "why";
+			//name = "abc";
+			
+			//2、常量必须赋值
+			//const name1;
+			
+			//3、常量的含义指向的对象不能修改，但是可以修改对象内部的属性
+			const obj = {
+				name: "why",
+				age: "18",
+				height: 1.80
+			}
+			//obj = {};
+			console.log(obj);
+			obj.name = "kobe";
+			obj.age = 40;
+			obj.height = 1.98;
+			console.log(obj);
+		</script>
+		
+	</body>
+</html>
